@@ -21,5 +21,5 @@ if ($result = mysqli_query($conn, "SELECT * FROM bikes")) {
 
 
 mysqli_close($conn);
-
+echo "Hello World";
 ?>
