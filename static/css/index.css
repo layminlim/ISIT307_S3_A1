@@ -1,0 +1,19 @@
+body {
+  margin: auto;
+  text-align: center;
+}
+
+div.homepage {
+  position: relative; 
+  bottom: 30%;
+  font-size: 20px;
+  
+  font-family: novecento-sans,sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+div.homepage a {
+  color: a5a58d;
+  text-decoration: none;
+}
