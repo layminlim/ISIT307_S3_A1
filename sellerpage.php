@@ -57,8 +57,12 @@
 		</br></br>
 				
 		Description: 
-		<textarea name="description" rows="5" cols="50"></textarea>
+		<textarea name="description" rows="5" cols="50" value="<?php echo $description; ?>"></textarea>
 		</br></br>
+
+		Bike Image:
+		<input type="file" name="bikeImage"><span class="error">* <?php echo $imgErr;?></span>
+		<br/><br/>
 
 		<input type="submit" value="Submit"/>
 		<br><br>

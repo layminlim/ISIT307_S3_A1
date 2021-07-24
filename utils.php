@@ -1,5 +1,6 @@
 <?php 
 define("BIKES_DB", "data/bikes.txt");
+define("BIKES_IMG", "data/img/");
 define("BUFSIZE", 1024 * 1024);
 // Bike Information
 define("NAME", 0);

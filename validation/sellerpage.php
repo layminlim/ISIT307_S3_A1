@@ -3,9 +3,10 @@
 
 	//set to empty strings
 	$success_msg = "";
-	$name = $phone = $email = $serial = $type = $description = ""; 
-	$nameErr = $phoneErr = $emailErr = $sErr = $typeErr = "";
-		
+	$name = $phone = $email = $serial = $type = $description = $bikeImage = ""; 
+	$nameErr = $phoneErr = $emailErr = $sErr = $typeErr = $imgErr = "";
+	$upload_ok = FALSE;
+	
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
 		// Name Validation
 		if (empty($_POST["sName"])) {
@@ -47,13 +48,40 @@
 			// Optional Description Field
 			$description = test_input($_POST["description"]);
 		}
+		// Bike Image Validation
+		
+		// Check if field is null
+		if (empty($_FILES["bikeImage"]["name"])) {
+			$imgErr = "File is required";
+		}
+		else {
+			// Get Image Extension
+			$imgFileType = pathinfo($_FILES["bikeImage"]["name"], PATHINFO_EXTENSION);
+		
+			// Check if Image is real or fake
+			if (!getimagesize($_FILES["bikeImage"]["tmp_name"])) {
+				$imgErr = "File is not an image";
+			}
+			// Check for File Size
+			else if ($_FILES["bikeImage"]["size"] > 500000) {
+				$imgErr = "Filesize too large";
+			} 
+			// Check for file upload type
+			else if ($imgFileType != "jpg" && $imgFileType != "png" && $imgFileType != "jpeg") {
+				$imgErr = "Please upload image only";
+			} 
+			else {
+				$bikeImage = test_input(basename($_FILES["bikeImage"]["name"]));
+				$upload_ok = TRUE;
+			}
+		}
 	}
 	
 	// Append Record into bikes.txt after successful form validation
-	if (!empty($name) && !empty($phone) && !empty($email) && !empty($serial) && !empty($type)) {
+	if (!empty($name) && !empty($phone) && !empty($email) && !empty($serial) && !empty($type) && $upload_ok === TRUE) {
 		$format = "%s::%d::%s::%s::%s::%s::%s\r";
 		// Save Bike Information onto bikes.txt
-		save_bike_info(sprintf($format, $name, $phone, $email, $serial, $type, $description, "test.png"));
+		save_bike_info(sprintf($format, $name, $phone, $email, $serial, $type, $description, $bikeImage));
 		// Show success message
 		$success_msg = "Save bike information to bikes.txt";
 		// Reset the Buffer
@@ -68,6 +96,11 @@
 	}
 
 	function save_bike_info($record) {
+		// Save Text Record
 		file_put_contents(BIKES_DB, $record.PHP_EOL , FILE_APPEND | LOCK_EX);
+
+		// Save Image
+		$target_file = BIKES_IMG . basename($_FILES["bikeImage"]["name"]);
+		move_uploaded_file($_FILES["bikeImage"]["tmp_name"], $target_file);
 	}
 ?>
