@@ -29,7 +29,7 @@
 <html>
 <body>
 	<form method="post" action="sellerpage.php" enctype="multipart/form-data">
-	<b style="font-size: 20px;">Bike Information</b>
+		<b style="font-size: 20px;">Bike Information</b>
 		<div class="sellerInfo">
 		Name: 
 		<input type="text" name="sName" placeholder="Angel Lee" value="<?php echo $name;?>" />

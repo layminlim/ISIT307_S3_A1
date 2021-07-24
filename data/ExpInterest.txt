@@ -1,0 +1,7 @@
+John,98475634,john@yahoo.com.sg,17-123-abc,117.80
+Sally,97364587,sallyseashore@gmail.com,20-456-def,65
+Allen,81270934,allen_fast@hotmail.com,15-127-dhu,37.93
+KayO,82457609,kayo_robot@outlook.com,17-827-aht,39.86
+Tom,98765432,tomholland@gmail.com,17-123-abc,99.99
+Utah,87450921,utah_otah@gmail.com,15-127-dhu,74.36
+Eve,98348345,eve@hotmail.com,17-123-abc,182.90
