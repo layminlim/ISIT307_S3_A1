@@ -88,39 +88,41 @@ require_once('utils.php');
 
 			  <!-- Modal content -->
 			  <div class="modal-content">
-			    <div class="modal-header">
-			      <span onclick="document.getElementById('myModal#<?= $modal_id; ?>').style.display='none'" class="close">&times;</span>
-			      <h4><?= $type; ?></h4>
-			      <p>
-			      	<b>Serial No:</b> <?= $serial_no; ?>
-			      	<span id="interest">&#9825;<?php echo getBikeInterest($serial_no); ?></span>
-			      	<br/>
-			      	<b>Year of Manufacture:</b> <?= $yom; ?>
-			      	<br/>
-			      	<b>Condition:</b> <?= $condition; ?>
-			      </p>
-			      <hr>
-			      <img src="<?= $bikeimg; ?>" alt="<?= $bikeimg; ?>" width="200" height="250" class="center"/>
-			      <hr>
-			    </div>
-			    <div class="modal-body">
-			      <p>
-			      	<b>Description:</b>	
-			    	<br/>
-			    	<?= $description; ?>
-			      </p>
-			      <p>
-			      	<b>Characteristics</b>
-			      	<br/>
-			      	<?= $characteristics ?>
-			      </p>
-			      <hr>
-			    </div>
-			    <div class="modal-footer">
-			      <button class="button blueBtn">Like</button>
-			    </div>
-			  </div>
-
+			  	<form action="interestpage.php" method="get">
+				    <div class="modal-header">
+				      <span onclick="document.getElementById('myModal#<?= $modal_id; ?>').style.display='none'" class="close">&times;</span>
+				      <h4><?= $type; ?></h4>
+				      <p>
+				      	<b>Serial No:</b> <?= $serial_no; ?>
+				      	<input type="hidden" value="<?= $serial_no; ?>" name="serial_no" />
+				      	<span id="interest">&#9825;<?php echo getBikeInterest($serial_no); ?></span>
+				      	<br/>
+				      	<b>Year of Manufacture:</b> <?= $yom; ?>
+				      	<br/>
+				      	<b>Condition:</b> <?= $condition; ?>
+				      </p>
+				      <hr>
+				      <img src="<?= $bikeimg; ?>" alt="<?= $bikeimg; ?>" width="200" height="250" class="center"/>
+				      <hr>
+				    </div>
+				    <div class="modal-body">
+				      <p>
+				      	<b>Description:</b>	
+				    	<br/>
+				    	<?= $description; ?>
+				      </p>
+				      <p>
+				      	<b>Characteristics</b>
+				      	<br/>
+				      	<?= $characteristics ?>
+				      </p>
+				      <hr>
+				    </div>
+				    <div class="modal-footer">
+				      <button type="submit" class="button blueBtn">Like</button>
+				    </div>
+				  </div>
+			  </form>
 			</div>
 		<?php 
 			// Increment the modal id 

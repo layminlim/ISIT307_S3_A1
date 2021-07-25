@@ -5,3 +5,6 @@ KayO,82457609,kayo_robot@outlook.com,17-827-aht,39.86
 Tom,98765432,tomholland@gmail.com,17-123-abc,99.99
 Utah,87450921,utah_otah@gmail.com,15-127-dhu,74.36
 Eve,98348345,eve@hotmail.com,17-123-abc,182.90
+test,182681,test@hotmial.com,20-456-def,1778.89
+testagain,1298719,test@gmail.com,20-456-def,11.89
+testtes,182729719,testtest@gmail.com,15-127-dhu,118.92
