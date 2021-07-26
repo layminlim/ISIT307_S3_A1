@@ -2,6 +2,9 @@
   margin-left: auto;
   margin-right: auto;
   width: 80%;
+	font-family: nimbus-sans-extended, sans-serif;
+	font-weight:50;
+	font-style: normal; 
 }
 
 .center {
@@ -21,7 +24,9 @@
 /* Remove extra left and right margins, due to padding */
 .row {
   margin: 0 -5px;
+ 
 }
+
 
 /* Clear floats after the columns */
 .row:after {
@@ -34,6 +39,7 @@
   margin-top: 5%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   padding: 16px;
+  border-radius: 10px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -63,9 +69,10 @@
 .blueBtn {
   position: static;
   font-size: 15px;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #1E90FF;
+  background-color: #ffad33; 
+  color: #ffffff; 
+  border-radius: 10px;
+  
 }
 
 .blueBtn:hover {

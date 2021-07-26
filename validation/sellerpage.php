@@ -3,8 +3,8 @@
 
 	//set to empty strings
 	$success_msg = "";
-	$name = $phone = $email = $serial = $type = $description = $bikeImage = ""; 
-	$nameErr = $phoneErr = $emailErr = $sErr = $typeErr = $imgErr = "";
+	$name = $phone = $email = $serial = $type = $description = $yom = $characteristics = $condition = $bikeImage = ""; 
+	$nameErr = $phoneErr = $emailErr = $sErr = $typeErr = $YOMerr = $charErr = $conErr = $imgErr = "";
 	$upload_ok = FALSE;
 	
 	if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -48,6 +48,30 @@
 			// Optional Description Field
 			$description = test_input($_POST["description"]);
 		}
+		//YOM validation 
+		if (empty($_POST["YOM"])) {
+			$YOMerr = "Year of manufracturing is required";
+		} 
+		else { 
+			$yom = test_input($_POST["YOM"]); 
+		} 
+		
+		//characteristics validation 
+		if (empty($_POST["characteristics"])) {
+			$charErr = "Characteristics is required"; 
+		}
+		else {
+			$characteristics = test_input($_POST["characteristics"]);
+		} 
+		
+		//condition validation 
+		if (empty($_POST["condition"])) {
+			$conErr = "Condition is required"; 
+		} 
+		else {
+			$condition = test_input($_POST["condition"]);
+		} 
+		
 		// Bike Image Validation
 		
 		// Check if field is null

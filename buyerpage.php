@@ -9,6 +9,8 @@ require_once('utils.php');
 <link rel="stylesheet" href="static/css/buyerpage.css">
 <!-- Modal CSS -->
 <link rel="stylesheet" href="static/css/modal.css">
+<!-- fonts -->
+<link rel="stylesheet" href="https://use.typekit.net/uyw6teo.css">
 
 <body>
 	<!-- Nav Bar -->
